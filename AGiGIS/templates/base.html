@@ -1,0 +1,30 @@
+{% load static %}
+
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Картографический сервис</title>
+  <script type="text/javascript" src="{% static 'libs/jquery.min.js' %}"></script>
+  <link rel="icon" href="{% static 'icons/icon_black.png' %}"/>
+  <link rel="stylesheet" href="{% static 'libs/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'libs/leaflet.css' %}" />
+  <link rel="stylesheet" href="{% static 'libs/bootstrapicons/font/bootstrap-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'libs/Control.FullScreen.css' %}" />
+  <script type="text/javascript" src="{% static 'libs/bootstrap.bundle.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'libs/leaflet.js' %}"></script>
+  <script type="text/javascript" src="{% static 'libs/Control.FullScreen.js' %}"></script>
+</head>
+<body class="m-0 p-0">
+<header class="m-0 p-0">
+  <div class="row text-center border-bottom m-0 p-0">
+    <!--  -->
+    <strong class="fs-1"><a class="text-dark" style="text-decoration: none" href="{% url 'city_map' %}">Картографический сервис ЦК АГиГИС</a></strong>
+    <a class="link-secondary" href="{% url 'admin_panel' %}">Панель администратора</a>
+  </div>
+  <div>
+  </div>
+</header>
+{% block content %}{% endblock %}
+</body>
+</html>

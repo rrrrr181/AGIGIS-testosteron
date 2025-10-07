@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Картографический сервис</title>
+    <script src="{% static 'app.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <header class="main-header">
+                <div class="layers">
+                    <div class="layer__header">
+                        <div class="layers__caption">Картографический сервис</div>
+                        <div class="layers__title">ЦК АГиГИС</div>
+                    </div>
+                    <div class="layer layers__base" style="background-image: url('{% static 'img/layer-base.png' %}');"></div>
+                    <div class="layer layers__middle" style="background-image: url('{% static 'img/layer_middle.png' %}');"></div>
+                    <div class="layer layers__front" style="background-image: url('{% static 'img/layer-front.png' %}');"></div>
+                </div>
+            </header>
+            <article class="main-article" style="background-image: url('{% static 'img/dungeon.jpg' %}');">
+                <div class="main-article__content">
+                    <h2 class="main-article__header">Чем мы занимаемся?</h2>
+                    <p class="main-article__paragraph">
+                        Мы занимаемся типографическими картами 
+                        (геологические, экологические, транспортные), а также       
+                        созданием и поддержкой ГИС-платформ, разработкой картографических веб-сервисов,  
+                        мобильных картографических приложений и другим!
+                    </p>
+                    <div>
+                        <a href="{% url 'city_map' %}">
+                            <button class="Button_link_Main">Перейти на главную страницу</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="copy">© WebDesign Master</div>
+            </article>
+        </div>      
+    </div>
+</body>
+</html>

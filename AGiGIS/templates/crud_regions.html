@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+{{ message }}
+{% endfor %}
+{% endif %}
+<div class="row">
+  <section class="col-lg-3"></section>
+  <section class="col-lg-6">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="container card mt-5">
+        {{ form.name.label }}
+        {{ form.name }}
+        {{ form.layer.label }}
+        {{ form.layer }}
+        {{ form.year.label }}
+        {{ form.year }}
+        {{ form.quarter.label }}
+        {{ form.quarter }}
+        {{ form.geojson_file.label }}
+        {{ form.geojson_file }}
+        {{ form.color.label }}
+        {{ form.color }}
+        <button type="submit" name='action' value="upload" class="btn btn-primary w-100 mt-3 mb-2">Загрузить файл</button>
+      </div>
+    </form>
+  </section>
+  <section class="col-lg-3">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form_for_file }}
+      <button type="submit" name='for_upload' value="file" class="btn btn-primary w-100 mt-3 mb-2">Загрузить файл</button>
+    </form>
+  </section>
+  <section class="col-lg-3"></section>
+  <section class="col-lg-6">
+    <div class="container">
+      <table class="table table-striped text-center">
+        <thead>
+        <tr>
+          <td>id</td>
+          <td>Наименование</td>
+          <td>Слой</td>
+          <td>Год</td>
+          <td>Квартал</td>
+          <td>Файл</td>
+          <td>Цвет</td>
+          <td>Редактировать</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for file in files %}
+        <tr>
+          <td>
+            {{ file.id }}
+          </td>
+          <td>
+            {{ file.name }}
+          </td>
+          <td>
+            {{ file.layer }}
+          </td>
+          <td>
+            {{ file.year }}
+          </td>
+          <td>
+            {{ file.quarter }}
+          </td>
+          <td>
+            {{ file.geojson_file }}
+          </td>
+          <td>
+            {{ file.color }}
+          </td>
+          <td>
+          </td>
+          {% endfor %}
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+{% endblock %}

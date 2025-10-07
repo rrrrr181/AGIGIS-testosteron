@@ -1,0 +1,254 @@
+a{
+    text-decoration: none;
+}
+.size_img{
+	width: 5vh;
+	height: 5vh;
+}
+body{
+background-image :url(img/dungeon.jpg);
+}
+.link_for_Show_element{
+    text-decoration: none;
+    color: black;
+}
+.image_and_Show{
+    display: flex;
+
+}
+
+.Text_pos{
+    display: flex;
+    justify-content: center;
+}
+
+.opportunity{
+    text-align: center;
+}
+
+.Show_dot{
+	
+
+}
+.Get_input_coor{
+    margin-left: 15px;
+    display: flex;
+    justify-content: center;
+}
+.Show_all_dot{
+    margin-left: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.processing{
+    display: flex;
+    justify-content: center;
+}
+
+.display_grid_element{
+    display: flex;
+    display: grid;
+        /* grid-template-columns: 100px 100px 100px; */
+        display: flex;
+        justify-content: center;
+
+}
+
+.grid_colum{
+
+}
+.grid_colum{
+    
+}
+
+.Table_see{
+     width: 400px ;
+    height: 250px;
+    box-shadow: 1px 1px 1px  1px black;
+        margin-left: 20px; ;
+        margin-top: 25px;
+            border-radius: 10px;
+transition: transform 0.4s ease-in-out;
+        margin-right: 20px;
+
+}
+
+
+.deacoding{
+background-color:rgba(233, 90, 90, 0);
+width: 125px;
+height: 40px;
+border-radius: 10px;
+border-color: rgb(52, 53, 53);
+}
+
+
+.highlight{
+background-color:rgba(233, 90, 90, 0);
+width: 170px;
+height: 40px;
+border-radius: 10px;
+border-color: rgb(52, 53, 53);
+}
+.to_dot_style{
+    background-color:rgba(233, 90, 90, 0);
+width: 150px;
+height: 40px;
+border-radius: 10px;
+border-color: rgb(52, 53, 53);
+}
+
+
+.color{
+    color: rgb(3, 3, 238);
+    display: flex;
+    justify-content: center;
+}
+
+.button_pos{
+    display: flex;
+    justify-content: center;
+
+}
+
+h2{
+    color: black;
+}
+
+.Text{
+    font-size: 16px;
+    text-align: center;
+}
+
+.coding{
+ margin-left: 10px;
+ background-color:rgba(233, 90, 90, 0);
+width: 125px;
+height: 40px;
+border-radius: 10px;
+border-color: rgb(52, 53, 53);
+}
+
+.Table_see:hover{
+transform: scale(1.1);
+}
+
+    .allocation{
+    width: 400px ;
+    height: 250px;
+    box-shadow: 1px 1px 1px  0.5px black;
+    margin-left: 20px; 
+    margin-top: 25px;
+        border-radius: 10px;
+                transition: transform 0.4s ease-in-out;
+        margin-right: 20px;
+
+
+}
+
+.allocation:hover{
+transform: scale(1.1);
+
+}
+.Routor{
+    width: 400px ;
+    height: 250px;
+    box-shadow: 1px 1px 2px  0.5px black;
+    margin-left: 20px; 
+    margin-top: 25px;
+        border-radius: 10px;
+        transition: transform 0.4s ease-in-out;
+        margin-right: 20px;
+
+}
+
+.to_dot{
+    background-color:darkslategrey;
+    color: white;
+}
+.fater_Show_element{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 400px ;
+    height: 250px;
+    box-shadow: 1px 1px 1px  0.5px black;
+    margin-top: 25px;
+    border-radius: 10px;
+  transition: transform 0.4s ease-in-out;
+        margin-right: 20px;
+
+}
+  
+.fater_Show_element:hover{
+transform: scale(1.1);
+
+}
+.Routor:hover{
+transform: scale(1.1);
+
+}
+
+.Kot{
+    text-decoration: none;
+    color: black;
+}
+.position_link_and_input{
+
+
+}
+
+
+.pos_a_and_input{
+    display: flex;
+
+}
+.Main_Routor{
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.uploud_file{
+     width: 400px ;
+    height: 250px;
+    box-shadow: 1px 1px 1px  0.5px black;
+    margin-left: 20px; 
+    margin-top: 25px;
+        border-radius: 10px;
+        transition: transform 0.4s ease-in-out;
+                margin-right: 20px;
+
+}
+.uploud_file:hover{
+        transform: scale(1.1);
+
+}
+
+.Select_layer{
+      width: 400px ;
+    height: 250px;
+    box-shadow: 1px 1px 1px  0.5px black;
+    margin-left: 20px; 
+    margin-top: 25px;
+        border-radius: 10px;
+        transition: transform 0.4s ease-in-out;
+    margin-right: 20px;
+
+}
+.Select_layer:hover{
+    transform: scale(1.1);
+
+}
+
+/* .Map_position{
+
+    max-width: 60%;
+    max-height: 50%;
+
+} */
+
+.Map_chiald{
+
+}

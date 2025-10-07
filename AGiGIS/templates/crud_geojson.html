@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+{{ message }}
+{% endfor %}
+{% endif %}
+<div class="row">
+  <section class="col-lg-3"></section>
+  <section class="col-lg-6">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="container card mt-5">
+        {{ form.file.label }}
+        {{ form.file }}
+        {{ form.name.label }}
+        {{ form.name }}
+        <button type="submit" name='action' value="upload" class="btn btn-primary w-100 mt-3 mb-2">Загрузить файл</button>
+      </div>
+    </form>
+  </section>
+  <section class="col-lg-3"></section>
+  <section class="col-lg-3"></section>
+  <section class="col-lg-6">
+    <div class="container">
+      <table class="table table-striped text-center">
+        <thead>
+        <tr>
+          <td>id</td>
+          <td>Наименование</td>
+          <td>Файл</td>
+          <td>Редактировать</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for file in files %}
+        <tr>
+          <td>
+            {{ file.id }}
+          </td>
+          <td>
+            {{ file.name }}
+          </td>
+          <td>
+            {{ file.file }}
+          </td>
+          <td>
+            <a href="{% url 'edit_geojson' file.id %}">Ред.</a>
+          </td>
+          {% endfor %}
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+{% endblock %}

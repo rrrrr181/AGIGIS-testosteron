@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/newstaly.css' %}">
+<body>
+  <div>
+    <h3>
+    </h3>
+  </div>
+  <div class="">
+
+
+<header>
+    </header>
+    <div class="opportunity">
+      <div class="">
+        <h2>Возможности</h2>
+      </div>
+      <p>Кликните на функцию, чтобы раскрыть ее описание</p>
+    </div>
+
+
+    <!---------------------------------------------------------------------------------------------------------------->
+    <div class="display_grid_element">
+      <div class="fater_Show_element">
+        <div class="Show_dot">
+          <div>
+            <div class="">
+              <h2 class="Text_pos">
+              <a href="#" class="color" onclick="showElement('point_show')">Отображение точки</a>
+              </h2>
+            </div>
+            <div class="Text">
+            Принимает вводимые координаты в формате: широта, долгота. Отмечает точку на карте при помощи модифицируемого маркера.
+            </div>
+          </div>
+         <div hidden id="point_show">
+          <div class="list-group item list-group-item-action py-3 lh-sm">
+            <strong >Введите координаты</strong>
+            <form id="coordinatesForm">
+              <label for="point" class="form-label">Точка (широта, долгота):</label>
+              <input type="text" class="form-control" id="point" placeholder="Например: 55.7557, 37.6176">
+              <button type="submit" class="btn btn-secondary w-100 mt-2">
+                Перейти к точке
+              </button>
+            </form>
+          </div>
+        </div>
+        </div>
+                              
+      </div>
+        
+        
+        <div class="Table_see">
+          <div>
+            <h2 class="Text_pos">
+              <a href="#" class="color" onclick="showElement('geohash_form')">Обработка геохэша</a>
+            </h2>
+          </div>
+          <div class="Text_pos"> 
+            <p >Конвертирует вводимые геохэш в координаты и на оборот </p>
+          </div>
+                  <p>
+                  </p>
+           <div hidden id="geohash_form">
+          <div>
+            <strong class="mb-1 mx-0 px-0">Введите геохэш или координаты:</strong>
+            <form id="decodeForm">
+              <input type="text" class="form-control" id="geohash" placeholder="Например: ucfv1hjbyggz или 55.7557, 37.6176">
+              <strong id="result_geohash"></strong>
+              <div >
+                <div class="button_pos" >
+                  <button class="deacoding">
+                    Декодировать
+                  </button>
+                </div>
+                <div class="col-lg-6">
+                  <button  class="coding">
+                    Кодировать
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        </div>
+        
+        <div class="allocation">
+          <div class="">
+            <div class="">
+              <strong>
+                <h2 class="color" >
+                  <a href="#" class="oblast" onclick="showElement('area_form')">Выделить область</a>
+                </h2>
+                
+              </strong>
+            </div>
+            <div class="Text_pos">
+              <p>Принимает вводные координаты в формате: широта, долгота. Позволяет выделить область на карте.</p>
+            </div>
+            <div>
+                  <div class="">
+          <div hidden id="area_form">
+          <div class="list-group item list-group-item-action py-3 lh-sm">
+            <strong class="mb-1 mx-0 px-0">Введите геохэш:</strong>
+            <form id="areaForm">
+              <input type="text" class="form-control" id="geohash_for_area" placeholder="Например: ucfv1hjbyggz">
+              <button type="submit" action="geohash_for_area" class="btn btn-secondary w-100 mt-2">
+                Выделить область
+              </button>
+            </form>
+          </div>
+        </div>
+        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div  class="Main_Routor">
+        <div>
+          <div class="Routor">
+            <div>
+              <h2 class="Text_pos">
+
+                <a href="#" class="color" onclick="showElement('route')">Построение маршрута</a>
+              </h2>
+              <div class="Text_pos">
+
+                <p>
+                  Строит перемещение маршрута на карте <br>
+                  с помощью двух вводимых  координат 
+                </p>
+              </div>
+            </div>
+            <!-- остальные элементы с этого блока  -->
+           <div hidden id="route">
+          <div class="list-group item list-group-item-action py-3 lh-sm">
+            <strong class="mb-1 mx-0 px-0">Введите координаты</strong>
+            <form method="post">
+              {% csrf_token %}
+              {{ form_route.as_p }}
+              <button type="submit" name="route" class="btn btn-secondary w-100 mt-2">
+                Построить маршрут
+              </button>
+            </form>
+          </div>
+        </div>
+          </div>
+          
+        </div>
+        <div class="uploud_file">
+          <div>
+            <h2 class="Text_pos">
+            <a class="color" href="#" class="mb-1 fs-5 text-dark text-decoration-none" onclick="showElement('upload_file')">Загрузка файла</a>
+            </h2>
+            <div Text_pos>
+
+              <p class="Text_pos">
+                принимает загружаемый файл в формате csv 
+              </p>
+            </div>
+          </div>
+
+
+          <div hidden id="upload_file">
+          <div class="card-body">
+            <input type="file" id="fileInput" accept=".csv" style="margin-bottom:2%"/>
+            <select id="visualizationType">
+              <option value="markers">Маркеры</option>
+              <option value="route">Маршрут</option>
+              <option value="heatmap">
+                Тепловая карта</option>
+              <option value="polygon">Полигон</option>
+              <option value="geohash">Геохеш</option>
+            </select>
+            <button  onclick="loadCSV()" class="btn btn-secondary w-100" style="margin-top:2%">Загрузить</button>
+          </div>
+        </div>
+        </div>
+
+
+
+        <div class=" Select_layer">
+          <div>
+            <h2 class="color">
+              Выбор слоя 
+            </h2>
+            <p class="Text_pos">
+              После загрузки файла выберете слои для их визуализации 
+            </p>
+          </div>
+           <select id="layerSelector" class="layer-selector">
+            <option value="">Выберите слой</option>
+            {% for layer in layers %}
+            <option value="{{ layer }}">{{ layer }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
+    <!---------------------КАРТА--------------------------------->
+    <div class="Map_position">
+      <div class="Map_chiald">
+        <div >
+          <div class="">
+            <label for="" class="form-label">Выберите год:</label>
+            <input type="range" class="form-range" min="2024" max="2025" id="year_list">
+          </div>
+          <div>
+            <label for="quarter_list" class="form-label">Выберите квартал:</label>
+            <input type="range" class="form-range" min="1" max="4" id="quarter_list">
+          </div>
+        </div>
+        <div class="">
+          <div id="map" style="height: 80vh; width: 100%; border-radius: 10px; border: 1px solid grey; "></div>
+        </div>
+      </div>
+      <!--*********************************************************-->
+    </div>
+  </div>
+  <script src="{% static 'scripts/worker.js' %}"></script>
+</body>
+  {% endblock %}
